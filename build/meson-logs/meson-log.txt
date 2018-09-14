@@ -1,0 +1,26 @@
+Build started at 2018-09-14T11:56:12.403145
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.46.1
+Source dir: /tmp/task2
+Build dir: /tmp/task2/build
+Build type: native build
+meson.build:1: WARNING: Passed invalid keyword argument "meason_version".
+WARNING: This will become a hard error in the future.
+Project name: task2
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ /tmp/task2/build/meson-private/sanitycheckcpp.cc -o /tmp/task2/build/meson-private/sanitycheckcpp.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /tmp/task2/build/meson-private/sanitycheckcpp.exe
+Native C++ compiler: c++ (gcc 8.1.1 "c++ (GCC) 8.1.1 20180502 (Red Hat 8.1.1-1)")
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Build targets in project: 1
+Found ninja-1.8.2 at /usr/bin/ninja
