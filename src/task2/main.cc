@@ -33,6 +33,11 @@ template <typename T>
 				++begin;
 				}
 			}
+			static void
+			swap()
+			{
+			
+			}
 		public:
 			typedef T* iterator;
 			typedef T value_type;
@@ -57,16 +62,26 @@ template <typename T>
 //				}
 //			~Vector(){
 //			
-//				delete []buffer;
-			void push_back(const T& value)
+//				delete []bufferi;
+//			//TODO Thik about this method
+			void push_back(T&& value) //Is it right type?
 			{
-					
+				if (_size >= _capacity)
+				{
+					reserve((_capacity = 0) ? (1) : (_capacity * 2)); // ........
+				}
+				data[_size] = value;		
+				++size;
 			}		
 			void pop_back()
 			{
-			
+				size--;
 			}
 			void erase()
+			{
+			
+			}
+			void swap
 			{
 			
 			}
