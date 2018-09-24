@@ -63,7 +63,8 @@ template <typename T>
 //			~Vector(){
 //			
 //				delete []bufferi;
-//			//TODO Thik about this method
+			
+			//TODO Thik about this method
 			void push_back(T&& value) //Is it right type?
 			{
 				if (_size >= _capacity)
