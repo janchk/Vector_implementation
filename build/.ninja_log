@@ -1,2 +1,4 @@
 # ninja log v5
-0	16	1536915381	src/task2/src@task2@@task2@exe/main.cc.o	bfee2de8d84e122e
+0	772	1538734964	build.ninja	677ff12ebad5dafa
+2	983	1538734965	src/task2/src@task2@@task2@exe/main.cc.o	1ecb9d808f994664
+985	1189	1538734965	src/task2/task2	58dae0896dc850d6
