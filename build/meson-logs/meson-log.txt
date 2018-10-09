@@ -1,4 +1,4 @@
-Build started at 2018-10-05T14:08:26.273398
+Build started at 2018-10-10T02:17:41.462775
 Main binary: /usr/bin/python3
 Python system: Linux
 The Meson build system
@@ -16,8 +16,8 @@ Build machine cpu: x86_64
 Build targets in project: 1
 Found ninja-1.8.2 at /usr/bin/ninja
 Running compile:
-Working directory:  /tmp/tmp96erzs0a
-Command line:  c++ /tmp/tmp96erzs0a/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmp96erzs0a/output.obj -O0 -fpermissive --print-search-dirs 
+Working directory:  /tmp/tmpn699f94e
+Command line:  c++ /tmp/tmpn699f94e/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmpn699f94e/output.obj -O0 -fpermissive --print-search-dirs 
 
 Code:
  
