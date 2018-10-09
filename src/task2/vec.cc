@@ -46,6 +46,8 @@ public:
 
     Vector<T> &operator=(Vector &&x);
 
+    Vector<T> &operator=(Vector &x);
+
 private:
 
     void swap(Vector &_x);
@@ -64,8 +66,7 @@ Vector<T>::Vector() {
 }
 
 template<class T>
-Vector<T>::Vector(Vector<T> &&__x) {
-    buffer(__x.buffer), size(__x._size);
+Vector<T>::Vector(Vector<T> &&__x):buffer(__x.buffer), _size(__x.size) {
     __x.buffer = nullptr;
     __x._size = nullptr;
 }
@@ -75,9 +76,10 @@ template<class T>
 Vector<T>::Vector(const Vector<T> &__x) {
     _size = __x._size;
     _capacity = __x._capacity;
-    buffer = new T[_size];
+    buffer = new T[_size]; //TODO another leak maybe
     for (unsigned int i = 0; i < _size; i++)
         buffer[i] = __x.buffer[i];
+    delete[] buffer;
 }
 
 template<class T>
@@ -119,8 +121,18 @@ void swap(T &a, T &b) {
 //}
 
 // still arguable
+
 template<class T>
-Vector<T> &Vector<T>::operator=(Vector &&__x) {
+Vector<T> &Vector<T>::operator=(Vector &&__x){
+    for (unsigned int i=0; i<__x._size; ++i) {
+        this->buffer[i] = std::move(__x.buffer[i]);
+    this->_size = __x._size;
+    }
+    return *this;
+}
+
+template<class T>
+Vector<T> &Vector<T>::operator=(Vector &__x) {
     this->buffer = __x.buffer;
     __x.buffer = nullptr;
     this->_size = __x._size;
@@ -172,7 +184,7 @@ void Vector<T>::reserve(unsigned int capacity) {
         _size = 0;
         _capacity = 0;
     }
-    T *Newbuffer = new T[capacity];
+    T *Newbuffer = new T[capacity]; 
     unsigned int l_Size = capacity < _size ? capacity : _size;
 
     for (unsigned int i = 0; i < l_Size; i++)
